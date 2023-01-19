@@ -12,8 +12,8 @@ export default function Example() {
   useEffect(() => {
     // Fetch data from API
     const promise = databases.listDocuments(
-      "63c83a51ab4ca7ad05e6",
-      "63c83ae8ef1683f008b1"
+      process.env.NEXT_PUBLIC_REACT_APP_DATABASE_ID,
+      process.env.NEXT_PUBLIC_REACT_APP_COLLECTION_ID
     ); // "[DATABASE_ID]", "[COLLECTION_ID]"
 
     promise.then(

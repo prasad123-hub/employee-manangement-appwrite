@@ -16,8 +16,8 @@ const AddEmployee = () => {
     setLoading(true);
     e.preventDefault();
     const promise = databases.createDocument(
-      "63c83a51ab4ca7ad05e6", // This is the ID of the database you created
-      "63c83ae8ef1683f008b1", // This is the ID of the collection you created
+      process.env.NEXT_PUBLIC_REACT_APP_DATABASE_ID, // This is the ID of the database you created
+      process.env.NEXT_PUBLIC_REACT_APP_COLLECTION_ID, // This is the ID of the collection you created
       uuidv4(), // This is the ID of the document you created
       {
         Name: name,

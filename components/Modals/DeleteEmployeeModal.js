@@ -14,8 +14,8 @@ export default function DeleteEmployeeModal({
     setIsDeleting(true);
     // Delete the employee from the database
     const promise = databases.deleteDocument(
-      "63c83a51ab4ca7ad05e6", // "[DATABASE_ID]"
-      "63c83ae8ef1683f008b1", // "[COLLECTION_ID]"
+      process.env.NEXT_PUBLIC_REACT_APP_DATABASE_ID, // "[DATABASE_ID]"
+      process.env.NEXT_PUBLIC_REACT_APP_COLLECTION_ID, // "[COLLECTION_ID]"
       documentId // "[DOCUMENT_ID]"
     );
 

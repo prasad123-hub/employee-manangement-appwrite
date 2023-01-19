@@ -4,20 +4,6 @@ import { account } from "../api/appwrite";
 import { ID } from "appwrite";
 import { toast, Toaster } from "react-hot-toast";
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 export default function Signup() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();

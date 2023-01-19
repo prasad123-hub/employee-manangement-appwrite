@@ -9,17 +9,14 @@ const EditEmployee = ({ data }) => {
   const [title, setTitle] = React.useState(data.Title);
   const [department, setDepartment] = React.useState(data.Department);
   const [role, setRole] = React.useState(data.Role);
-
-  console.log("name", name);
-
   const [loading, setLoading] = React.useState(false);
 
   const handleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
     const promise = databases.updateDocument(
-      "63c83a51ab4ca7ad05e6", // This is the ID of the database you created
-      "63c83ae8ef1683f008b1", // This is the ID of the collection you created
+      process.env.NEXT_PUBLIC_REACT_APP_DATABASE_ID, // This is the ID of the database you created
+      process.env.NEXT_PUBLIC_REACT_APP_COLLECTION_ID, // This is the ID of the collection you created
       data.$id, // This is the ID of the document you want to edit
       {
         Name: name,
